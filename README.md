@@ -1,4 +1,4 @@
-# Docker Recon Image
+# Docker Recon (Em Desenvolvimento)
 Para usar o projeto precisamos ter instalado o **Docker** , qualquer duvida pode ser tirado na **wiki** do repositório.
 
 ## Projetos
@@ -19,6 +19,9 @@ Para usar o projeto precisamos ter instalado o **Docker** , qualquer duvida pode
 - Shodan 1.7.5
 - Fierce 1.2.0
 - Dirb 2.22
+- Google 1.9.3
+- DNSRecon 0.8.11
+- TheHarvester 2.7.1
 
 ## Clonando o repositório
 Podemos clonar e construir a imagem.
@@ -30,6 +33,8 @@ Podemos ir até o projeto baixado.
 ```sh
 cd recon
 ```
+
+Não podemos esquecer de criar o nosso diretorio **recon** , ele vai ser nossa ponte para enviar arquivos para maquina.
 
 ## Contruindo imagem
 Nesse caso a minha imagem se chamara **recon**.
