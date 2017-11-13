@@ -57,9 +57,13 @@ RUN cd /tmp && git clone https://github.com/ricardolongatto/dnsrato && cd dnsrat
 
 RUN cd /tmp && wget https://sourceforge.net/projects/dirb/files/dirb/2.22/dirb222.tar.gz && tar xf dirb222.tar.gz && cd dirb222 && chmod +x configure && ./configure && make && chmod +x dirb && ln -s /tmp/dirb222/dirb /bin/dirb
 
-RUN export LC_ALL=C.UTF-8
+# V0.1
+RUN apt-get install python-pip -y
 
-RUN export LANG=C.UTF-8
-# TODO Instalação do dnsenum
-#RUN apt-get install cpanminus -y
-#RUN cpanm String::Random && cd /tmp && git clone https://github.com/fwaeytens/dnsenum && cd dnsenum && chmod +x dnsenum.pl && ln -s /tmp/dnsenum/dnsenum.pl /bin/dnsenum
+RUN apt-get install nano -y
+
+RUN pip3 install google
+
+RUN apt-get install libavahi-compat-libdnssd1 git-core -y && apt-get install python-setuptools -y && cd /tmp && git clone git://github.com/darkoperator/dnsrecon.git && chmod +x /tmp/dnsrecon/dnsrecon.py && ln -s /tmp/dnsrecon/dnsrecon.py /bin/dnsrecon
+
+RUN cd /tmp && git clone https://github.com/laramies/theHarvester && chmod +x /tmp/theHarvester/theHarvester.py && ln -s /tmp/theHarvester/theHarvester.py /bin/theHarvester && pip install requests && theHarvester
